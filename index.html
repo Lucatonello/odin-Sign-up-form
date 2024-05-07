@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="image-container">
+        <img id="image" src="background-image.jpg" alt="background image">
+        <div id="logo-container">
+            <img id="odin-logo" src="odin-lined.png" alt="odin logo" height="100%">
+            <p id="odin">odin</p>
+        </div>
+    </div>
+    <div class="container1">
+        <h1 class="title">This is not a real online service! You know you need something like this in your life to help realize your deepest dreams. Sign up now to get started.</h1>
+        <h1 class="subtitle">You know you want to.</h1>
+    </div>
+    <div class="container2">
+        <h1 class="title2">Let's do this!</h1>
+        <div class="input">
+            <div class="name-fields">
+                <div class="first-name">
+                    <label class="first-name" for="first-name">FIRST NAME</label>
+                    <div>
+                        <input type="text" id="first-name" class="first-name" name="first-name" required>
+                    </div>
+                </div>
+                <div class="last-name">
+                    <label class="last-name" for="last-name">LAST NAME</label>
+                    <div>
+                        <input type="text" class="last-name" name="last-name" required>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-fields">
+                <div class="email">
+                    <label id="email" class="email" for="email">EMAIL</label>
+                    <div>
+                        <input type="text" class="email" name="email" required>
+                    </div>
+                </div>
+                <div class="number">
+                    <label id="number" class="number" for="number">PHONE NUMBER</label>
+                    <div>
+                        <input type="text" class="number" name="number" required>
+                    </div>
+                </div>
+            </div>
+            <div class="password-fields">
+                <div class="password">
+                    <label class="password" for="password">PASSWORD</label>
+                    <div>
+                        <input id="password" type="text" class="password" name="password" required>
+                    </div>
+                </div>
+                <div class="confirm-pasword">
+                    <label class="confirm-pasword" for="confirm-pasword">CONFIRM PASSWORD</label>
+                    <div>
+                        <input id="confirm-password" type="text" class="confirm-pasword" name="confirm-pasword" required>
+                        <span id="password-error" class="error-message" style="display: none;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        <button type="button" id="submit-button" class="button" name="submit">Create Account</button>
+        <div>
+            <p class="log-in">Already have an account? <span id="already">Log in</span></p>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('confirm-password').addEventListener('input', function() {
+        let password = document.getElementById('password').value;
+        let confirmPassword = this.value;
+
+        if (password !== confirmPassword) {
+            document.getElementById('password-error').innerText = "*Passwords do not match";
+            document.getElementById('password-error').style.display = 'block';
+            document.getElementById('confirm-password').style.borderColor = 'red';
+            document.getElementById('password').style.borderColor = 'red';
+        } else {
+            document.getElementById('password-error').innerText = "";
+            document.getElementById('password-error').style.display = 'none';
+            document.getElementById('password').style.borderColor = '';
+            document.getElementById('confirm-password').style.borderColor = '';
+        }
+    });
+</script>
+</html>
